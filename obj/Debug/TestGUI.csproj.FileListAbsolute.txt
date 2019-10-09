@@ -1,0 +1,70 @@
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\TestGUI.csprojResolveAssemblyReference.cache
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.GUIForm.resources
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\TestGUI.csproj.GenerateResource.Cache
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\TestGUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\TestGUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\TestGUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\TestGUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\TestGUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\TestGUI\WindowsFormsApplication1\obj\Debug\TestGUI.csprojResolveAssemblyReference.cache
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\TestGUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.GUIForm.resources
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\TestGUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\TestGUI\WindowsFormsApplication1\obj\Debug\TestGUI.csproj.GenerateResource.Cache
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\Working\TestGUI\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\Working\TestGUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Alan\Desktop\Teaching\ITN647 - Advanced IR\Pracs\Week 8\Working\TestGUI\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\obj\Debug\TestGUI.csprojAssemblyReference.cache
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.GUIForm.resources
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\obj\Debug\TestGUI.csproj.GenerateResource.cache
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\obj\Debug\TestGUI.csproj.CoreCompileInputs.cache
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\obj\Debug\TestGUI.csproj.CopyComplete
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Analyzers.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Core.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.FastVectorHighlighter.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Highlighter.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Memory.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Queries.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Regex.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.SimpleFacetedSearch.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Snowball.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.SpellChecker.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.ObjectMapping.dll
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Analyzers.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Analyzers.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Core.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Core.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.FastVectorHighlighter.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.FastVectorHighlighter.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Highlighter.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Highlighter.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Memory.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Memory.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Queries.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Queries.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Regex.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Regex.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.SimpleFacetedSearch.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.SimpleFacetedSearch.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Snowball.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.Snowball.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.SpellChecker.pdb
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.Contrib.SpellChecker.xml
+C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\TestGUISolution\WindowsFormsApplication1\bin\Debug\Lucene.Net.ObjectMapping.xml
