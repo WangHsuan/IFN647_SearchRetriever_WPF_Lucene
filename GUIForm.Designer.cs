@@ -37,15 +37,12 @@
             this.BrowseLabel = new System.Windows.Forms.Label();
             this.SaveLabel = new System.Windows.Forms.Label();
             this.myOpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.Index = new System.Windows.Forms.Button();
+            this.SearchAndDisplay = new System.Windows.Forms.Button();
             this.textBoxEnter = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.TextEnter = new System.Windows.Forms.TextBox();
-            this.TextButton = new System.Windows.Forms.Button();
-            this.TextShowEnter = new System.Windows.Forms.Label();
-            this.TextShowChange = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.list = new System.Windows.Forms.ListBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.StopWatch = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NextLabel
@@ -70,10 +67,10 @@
             // 
             // BrowseButton
             // 
-            this.BrowseButton.Location = new System.Drawing.Point(659, 55);
+            this.BrowseButton.Location = new System.Drawing.Point(659, 58);
             this.BrowseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BrowseButton.Name = "BrowseButton";
-            this.BrowseButton.Size = new System.Drawing.Size(116, 33);
+            this.BrowseButton.Size = new System.Drawing.Size(119, 30);
             this.BrowseButton.TabIndex = 8;
             this.BrowseButton.Text = "Browse";
             this.BrowseButton.UseVisualStyleBackColor = true;
@@ -81,10 +78,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(659, 109);
+            this.SaveButton.Location = new System.Drawing.Point(659, 138);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(112, 35);
+            this.SaveButton.Size = new System.Drawing.Size(119, 30);
             this.SaveButton.TabIndex = 9;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -93,7 +90,7 @@
             // BrowseLabel
             // 
             this.BrowseLabel.AutoSize = true;
-            this.BrowseLabel.Location = new System.Drawing.Point(799, 58);
+            this.BrowseLabel.Location = new System.Drawing.Point(655, 93);
             this.BrowseLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BrowseLabel.Name = "BrowseLabel";
             this.BrowseLabel.Size = new System.Drawing.Size(129, 20);
@@ -103,7 +100,7 @@
             // SaveLabel
             // 
             this.SaveLabel.AutoSize = true;
-            this.SaveLabel.Location = new System.Drawing.Point(799, 116);
+            this.SaveLabel.Location = new System.Drawing.Point(665, 173);
             this.SaveLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SaveLabel.Name = "SaveLabel";
             this.SaveLabel.Size = new System.Drawing.Size(112, 20);
@@ -114,15 +111,15 @@
             // 
             this.myOpenFileDialog1.FileName = "myOpenFileDialog1";
             // 
-            // Index
+            // SearchAndDisplay
             // 
-            this.Index.Location = new System.Drawing.Point(370, 54);
-            this.Index.Name = "Index";
-            this.Index.Size = new System.Drawing.Size(119, 34);
-            this.Index.TabIndex = 15;
-            this.Index.Text = "Search";
-            this.Index.UseVisualStyleBackColor = true;
-            this.Index.Click += new System.EventHandler(this.Index_Click);
+            this.SearchAndDisplay.Location = new System.Drawing.Point(370, 58);
+            this.SearchAndDisplay.Name = "SearchAndDisplay";
+            this.SearchAndDisplay.Size = new System.Drawing.Size(119, 30);
+            this.SearchAndDisplay.TabIndex = 15;
+            this.SearchAndDisplay.Text = "Search";
+            this.SearchAndDisplay.UseVisualStyleBackColor = true;
+            this.SearchAndDisplay.Click += new System.EventHandler(this.Index_Click);
             // 
             // textBoxEnter
             // 
@@ -132,95 +129,62 @@
             this.textBoxEnter.TabIndex = 16;
             this.textBoxEnter.TextChanged += new System.EventHandler(this.TextBox1_TextChanged_1);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(246, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Result List";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(520, 54);
+            this.button1.Location = new System.Drawing.Point(516, 58);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 34);
+            this.button1.Size = new System.Drawing.Size(119, 30);
             this.button1.TabIndex = 20;
             this.button1.Text = "Index";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
-            // TextEnter
+            // list
             // 
-            this.TextEnter.Location = new System.Drawing.Point(13, 628);
-            this.TextEnter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TextEnter.Name = "TextEnter";
-            this.TextEnter.Size = new System.Drawing.Size(412, 26);
-            this.TextEnter.TabIndex = 1;
-            this.TextEnter.TextChanged += new System.EventHandler(this.TextEnter_TextChanged);
+            this.list.FormattingEnabled = true;
+            this.list.ItemHeight = 20;
+            this.list.Location = new System.Drawing.Point(12, 230);
+            this.list.Name = "list";
+            this.list.Size = new System.Drawing.Size(1176, 344);
+            this.list.TabIndex = 22;
+            this.list.SelectedIndexChanged += new System.EventHandler(this.List_SelectedIndexChanged);
             // 
-            // TextButton
+            // comboBox1
             // 
-            this.TextButton.Location = new System.Drawing.Point(12, 535);
-            this.TextButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.TextButton.Name = "TextButton";
-            this.TextButton.Size = new System.Drawing.Size(108, 34);
-            this.TextButton.TabIndex = 5;
-            this.TextButton.Text = "Enter";
-            this.TextButton.UseVisualStyleBackColor = true;
-            this.TextButton.Click += new System.EventHandler(this.TextButton_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 602);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 23;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
-            // TextShowEnter
+            // StopWatch
             // 
-            this.TextShowEnter.AutoSize = true;
-            this.TextShowEnter.Location = new System.Drawing.Point(16, 574);
-            this.TextShowEnter.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.TextShowEnter.Name = "TextShowEnter";
-            this.TextShowEnter.Size = new System.Drawing.Size(142, 20);
-            this.TextShowEnter.TabIndex = 6;
-            this.TextShowEnter.Text = "Show text on enter";
-            this.TextShowEnter.Click += new System.EventHandler(this.TextShow_Click);
-            // 
-            // TextShowChange
-            // 
-            this.TextShowChange.AutoSize = true;
-            this.TextShowChange.Location = new System.Drawing.Point(8, 603);
-            this.TextShowChange.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.TextShowChange.Name = "TextShowChange";
-            this.TextShowChange.Size = new System.Drawing.Size(158, 20);
-            this.TextShowChange.TabIndex = 12;
-            this.TextShowChange.Text = "Show text on change";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(13, 181);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1176, 324);
-            this.listBox1.TabIndex = 22;
+            this.StopWatch.AutoSize = true;
+            this.StopWatch.Location = new System.Drawing.Point(12, 207);
+            this.StopWatch.Name = "StopWatch";
+            this.StopWatch.Size = new System.Drawing.Size(43, 20);
+            this.StopWatch.TabIndex = 24;
+            this.StopWatch.Text = "Time";
+            this.StopWatch.Click += new System.EventHandler(this.StopWatch_Click);
             // 
             // GUIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1201, 668);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.StopWatch);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.list);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxEnter);
-            this.Controls.Add(this.Index);
-            this.Controls.Add(this.TextShowChange);
+            this.Controls.Add(this.SearchAndDisplay);
             this.Controls.Add(this.SaveLabel);
             this.Controls.Add(this.BrowseLabel);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.BrowseButton);
             this.Controls.Add(this.ClickLabel1);
-            this.Controls.Add(this.TextShowEnter);
-            this.Controls.Add(this.TextButton);
             this.Controls.Add(this.NextLabel);
-            this.Controls.Add(this.TextEnter);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GUIForm";
             this.Text = "Form1";
@@ -242,15 +206,12 @@
 
         private System.Windows.Forms.Label[] LabelArray;
         private System.Windows.Forms.OpenFileDialog myOpenFileDialog1;
-        private System.Windows.Forms.Button Index;
+        private System.Windows.Forms.Button SearchAndDisplay;
         private System.Windows.Forms.TextBox textBoxEnter;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox TextEnter;
-        private System.Windows.Forms.Button TextButton;
-        private System.Windows.Forms.Label TextShowEnter;
-        private System.Windows.Forms.Label TextShowChange;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox list;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label StopWatch;
     }
 }
 

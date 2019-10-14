@@ -28,19 +28,19 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string text = p.getNextLine();
-            this.NextLabel.Text =text;
+           // string text = p.getNextLine();
+           // this.NextLabel.Text =text;
         }
 
         private void TextButton_Click(object sender, EventArgs e)
         {
-            string path = BrowseLabel.Text;
+            //string path = BrowseLabel.Text;
             //TextShowEnter.Text = index.collectString(path);
         }
 
         private void TextEnter_TextChanged(object sender, EventArgs e)
         {
-            TextShowChange.Text = TextEnter.Text;
+           // TextShowChange.Text = TextEnter.Text;
         }
 
         private void TextShow_Click(object sender, EventArgs e)
@@ -92,16 +92,19 @@ namespace WindowsFormsApplication1
 
         private void Index_Click(object sender, EventArgs e)
         {
+            list.Items.Clear();
             string query = textBoxEnter.Text;
             string path = BrowseLabel.Text;
-            string rankResult = "";
-            var resultList = index.activateIndex(query, path);
-            for (int i = 0; i < resultList.Count(); i++){
-               
-                listBox1.Items.Add(resultList[i]);
-            }
 
+            index.CreateSearcher(path);
             
+            for (int i = 0; i < index.SearchAndDisplayResults(query).Count(); i++)
+            {
+                list.Items.Add(index.SearchAndDisplayResults(query)[i]);
+            }
+          
+            index.CleanUpSearcher();
+
 
         }
 
@@ -111,6 +114,34 @@ namespace WindowsFormsApplication1
         }
 
         private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] analyzers = { "Simple", "Standard", "Snaowball" };
+            
+            comboBox1.Items.AddRange(analyzers);
+            
+            
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+           
+            string path = BrowseLabel.Text;
+            // var resultList = index.activateIndex(query, path);
+            index.activateIndex(path);
+            StopWatch.Text = index.IndexingTime;
+        }
+
+        private void StopWatch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void List_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

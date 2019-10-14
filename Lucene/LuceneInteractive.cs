@@ -12,6 +12,9 @@ using Lucene.Net.QueryParsers;  // for QueryParser
 using WindowsFormsApplication1.Collection;
 using Newtonsoft.Json;
 using System.IO;
+using System.Diagnostics;
+using System.Threading;
+using Newtonsoft.Json.Linq;
 
 class LuceneInteractive
     {
@@ -21,26 +24,29 @@ class LuceneInteractive
         Lucene.Net.Index.IndexWriter writer;
         IndexSearcher searcher;
         QueryParser parser;
-    //private object JsonConvert;
         
+
         const Lucene.Net.Util.Version VERSION = Lucene.Net.Util.Version.LUCENE_30;
+        const string TITLE_FN = "Title";
+        const string AUTHOR_FN = "Author";
         const string TEXT_FN = "Text";
+        public string IndexingTime { get; set; }
+        public string IndexPath { get; set; }
+        public LuceneInteractive()
+            {
+                luceneIndexDirectory = null;
+                writer = null;
+                analyzer = new Lucene.Net.Analysis.SimpleAnalyzer();
+                parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, TEXT_FN, analyzer);
+                
+            }
 
-    public LuceneInteractive()
-        {
-            luceneIndexDirectory = null;
-            writer = null;
-            analyzer = new Lucene.Net.Analysis.SimpleAnalyzer();
-            parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, TEXT_FN, analyzer);
-       
-    }
 
-
-        /// <summary>
-        /// Creates the index at a given path
-        /// </summary>
-        /// <param name="indexPath">The pathname to create the index</param>
-        public void CreateIndex(string indexPath)
+    /// <summary>
+    /// Creates the index at a given path
+    /// </summary>
+    /// <param name="indexPath">The pathname to create the index</param>
+    public void CreateIndex(string indexPath)
         {
             luceneIndexDirectory = Lucene.Net.Store.FSDirectory.Open(indexPath);
             IndexWriter.MaxFieldLength mfl = new IndexWriter.MaxFieldLength(IndexWriter.DEFAULT_MAX_FIELD_LENGTH);
@@ -55,11 +61,18 @@ class LuceneInteractive
         public void IndexText(string text)
         {
 
-            Lucene.Net.Documents.Field field = new Field(TEXT_FN, text, Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
-            Lucene.Net.Documents.Document doc = new Document();
-            doc.Add(field);
-            writer.AddDocument(doc);
-        }
+        Lucene.Net.Documents.Field field = new Field(TEXT_FN, text, Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
+        //Lucene.Net.Documents.Field authorField = new Field(AUTHOR_FN, author, Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.WITH_POSITIONS_OFFSETS);
+        //Lucene.Net.Documents.Field titleField = new Field(TITLE_FN, title, Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.WITH_POSITIONS_OFFSETS);
+        Lucene.Net.Documents.Document doc = new Document();
+        doc.Add(field);
+        //  doc.Boost = (float) pagerank; // Activity 5
+        writer.AddDocument(doc);
+        //doc.Add(authorField);
+        //doc.Add(titleField);
+        //doc.Boost = (float)pagerank; // Activity 5
+        //writer.AddDocument(doc);
+    }
 
 
         /// <summary>
@@ -76,142 +89,183 @@ class LuceneInteractive
         /// <summary>
         /// Creates the searcher object
         /// </summary>
-        public void CreateSearcher()
+        public void CreateSearcher(string indexPath)
         {
-            searcher = new IndexSearcher(luceneIndexDirectory);
+        luceneIndexDirectory = Lucene.Net.Store.FSDirectory.Open(IndexPath);
+        searcher = new IndexSearcher(luceneIndexDirectory);
         }
 
-        /// <summary>
-        /// Searches the index for the querytext
-        /// </summary>
-        /// <param name="querytext">The text to search the index</param>
-        public TopDocs SearchText(string querytext)
-        {
+       
 
-            System.Console.WriteLine("Searching for " + querytext);
+        public List<string> SearchAndDisplayResults(string querytext)
+        {
             querytext = querytext.ToLower();
             Query query = parser.Parse(querytext);
-
             TopDocs results = searcher.Search(query, 100);
 
-            return results;
-        }
-
-
-        /// <summary>
-        /// Displays a ranked list of results to the screen
-        /// </summary>
-        /// <param name="results">A set of results</param>
-        public List<string> DisplayResults(TopDocs results)
-        {
-
             int rank = 0;
-        List<string> rankResult = new List<string>();
+            List<string> rankResult = new List<string>();
             foreach (ScoreDoc scoreDoc in results.ScoreDocs)
             {
                 rank++;
                 Lucene.Net.Documents.Document doc = searcher.Doc(scoreDoc.Doc);
-                string myFieldValue = doc.Get(TEXT_FN).ToString();
-                rankResult.Add("Rank " + rank + " text: " + myFieldValue);
-                //hsuan +=  "Rank " + rank + " text " + myFieldValue +"\n";
-            }
-        return rankResult;
-        }
-
-
-        /// <summary>
-        /// Print document detils to the screen
-        /// </summary>
-        /// <param name="results">Set of results for a query</param>
-        /// <param name="docNum">A document number</param>
-        public void DisplayOneResult(TopDocs results, int resultIndex)
-        {
-            ScoreDoc scoreDoc = results.ScoreDocs[resultIndex];
-            Lucene.Net.Documents.Document doc = searcher.Doc(scoreDoc.Doc);
             string myFieldValue = doc.Get(TEXT_FN).ToString();
-            Console.WriteLine("DocNum " + resultIndex + " text " + myFieldValue);
-        }
+            rankResult.Add("Rank " + rank + " title " + myFieldValue);
 
+            //string titleValue = doc.Get(TITLE_FN).ToString();
+            //string authorValue = doc.Get(AUTHOR_FN).ToString();
+            //Console.WriteLine("Rank " + rank + " title " + titleValue + " author " + authorValue);
+            //rankResult.Add("Rank " + rank + " title " + titleValue + " author " + authorValue);
+        }
+       
+        return rankResult;
+
+    }
+        
 
         /// <summary>
         /// Closes the index after searching
         /// </summary>
         public void CleanUpSearcher()
+            {
+                searcher.Dispose();
+            }
+
+        public List<string> collectString(string path)
         {
-            searcher.Dispose();
-        }
-
-    public List<IndividualCollection> collectString(string path) {
-
+        //-------------------------------------------------------------------------------------------------
         //string pathdicectory = @"C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Sample.json";
         string pathdicectory = path;
         // Input Json to string and then using list to store
         System.IO.TextReader reader = new System.IO.StreamReader(pathdicectory);
         string text = reader.ReadToEnd();
         reader.Close();
-
         List<IndividualCollection> hsuan = JsonConvert.DeserializeObject<List<IndividualCollection>>(text);
 
-        //IndividualCollection p2 = hsuan[0];
+        //--------------------------------------------------------------------------------------------------
+       
+        string hsuanJson = "";
+        int arrayNumber = 0;
+        string deArray = "";
+        List<string> returnList = new List<string>();
+        List<IndividualCollection> hsuanJsonList = new List<IndividualCollection>();
+        using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+        using (StreamReader sr = new StreamReader(fs))
+        using (JsonTextReader Jsonreader = new JsonTextReader(sr))
+        {
+            while (Jsonreader.Read())
+            {
+                if (Jsonreader.TokenType == JsonToken.StartObject)
+                {
+                    // Load each object from the stream and do something with it
+                    JObject obj = JObject.Load(Jsonreader);
+                    //Console.WriteLine(obj["passages"]);
+                    deArray = obj["passages"].ToString();
+                    hsuanJsonList = JsonConvert.DeserializeObject<List<IndividualCollection>>(deArray);
+                    for (int i =0; i<hsuanJsonList.Count();i++) {
+                        returnList.Add(hsuanJsonList[i].passage_text);
+                        //Console.WriteLine(hsuanJsonList[i].passage_text + hsuanJsonList[i].passage_ID);
+                    }
+                    arrayNumber++;
+                }
+            }
+           
+        }
+        //Console.WriteLine(hsuanJson);
+        //for (int i =0; i<returnList.Count();i++) {
+        //    Console.WriteLine(returnList[i]);
+        //}
 
+        //-----------------------------------------------------------------------------------------------
+        return returnList;
 
-        return hsuan;
     }
 
 
     //----------------------------------------------------------------------------
+    /// Creates a Thesuaris of stems
+    public Dictionary<string, string[]> CreateThesaurus()
+    {
+        Dictionary<string, string[]> thesaurus = new Dictionary<string, string[]>();
 
-
-    //-----------------------------------------------------------------------------
-    public List<string> activateIndex(string query,string path)
+        thesaurus.Add("walk", new[] { "walk", "walked", "walking" });
+        thesaurus.Add("run", new[] { "run", "running" });
+        thesaurus.Add("love", new[] { "love", "lovely", "loving" });
+        return thesaurus;
+    }
+    /// Expands the query with terms in the thesaurus
+    public string GetExpandedQuery(Dictionary<string, string[]> thesaurus, string queryTerm)
+    {
+        string expandedQuery = "";
+        if (thesaurus.ContainsKey(queryTerm))
         {
-
-        
-
-        List<IndividualCollection> hsuan = collectString(path);
-
-
-        // source collection
-        List<string> l = new List<string>();
-        for (int i =0;i<=4;i++) {
-            l.Add(hsuan[i].passage_text + hsuan[i].passage_ID);
+            string[] array = thesaurus[queryTerm];
+            foreach (string a in array)
+            {
+                expandedQuery += " " + a;
+            }
         }
+        return expandedQuery;
+    }
+    /// Expands the query with terms in the thesaurus but weights the original term the highest
+    public string GetWeightedExpandedQuery(Dictionary<string, string[]> thesausus, string query)
+    {
+        string expandedQuery = "";
+        if (thesausus.ContainsKey(query))
+        {
+            bool first = true;
+            string[] array = thesausus[query];
+            foreach (string a in array)
+            {
+                expandedQuery += " " + a;
+                if (first)
+                {
+                    expandedQuery += "^5";
+                    first = false;
+                }
+            }
+        }
+        return expandedQuery;
+    }
+    //-----------------------------------------------------------------------------
+    public void activateIndex(string path)
+        {
+        LuceneInteractive myLuceneApp = new LuceneInteractive();
 
-
-
+        //List<IndividualCollection> collectionList = collectString(path);
+        List<string> l = collectString(path);
+        for (int i =0; i<l.Count();i++) {
+            Console.WriteLine(l[i]);
+        }
+        // source collection
+        //List<string> l = new List<string>();
+        //System.Console.WriteLine(collectionList.Count());
+        //for (int i =0;i< collectionList.Count(); i++) {
+        //    l.Add(collectionList[i].passage_text + collectionList[i].passage_ID);
+           
+        //}
+        System.Console.WriteLine(l.Count());
         // Index code
-        string indexPath = @"C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\HsuanIndex";
-            LuceneInteractive myLuceneApp = new LuceneInteractive();
-            myLuceneApp.CreateIndex(indexPath);
-            
+        IndexPath = @"C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\HsuanIndex";
+           // LuceneInteractive myLuceneApp = new LuceneInteractive();
+            DateTime Indexingstart = System.DateTime.Now;
+            myLuceneApp.CreateIndex(IndexPath);            
             foreach (string s in l)
             {
                 myLuceneApp.IndexText(s);
             }
             
             myLuceneApp.CleanUpIndexer();
+            DateTime IndexingEnd = System.DateTime.Now;
+            IndexingTime = (IndexingEnd - Indexingstart).ToString();
 
-            myLuceneApp.CreateSearcher();
-            TopDocs results = myLuceneApp.SearchText(query);
-            
-           return  myLuceneApp.DisplayResults(results);
-        // return myLuceneApp.DisplayResults(results);
 
-        //// Activity 7
-            //myLuceneApp.DisplayOneResult(results, 0);
-            //myLuceneApp.DisplayOneResult(results, 1);
-            //myLuceneApp.DisplayOneResult(results, 2);
-
-        //// Activity 8
-        //Console.WriteLine("Enter the rank index for the result you wish to view: ");
-        //string myText = Console.ReadLine();
-           // int myInt = Int32.Parse(query);
-           //myLuceneApp.DisplayOneResult(results, myInt);
-
-        //Console.ReadLine();
+           // myLuceneApp.CreateSearcher();
+           //return  myLuceneApp.SearchAndDisplayResults(query);
+        
         //myLuceneApp.CleanUpSearcher();
 
 
     }
-    }
+}
 
