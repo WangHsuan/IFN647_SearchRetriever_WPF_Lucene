@@ -39,7 +39,6 @@ class LuceneInteractive
             writer = null;
             analyzer = new Lucene.Net.Analysis.SimpleAnalyzer();
             parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, TEXT_FN, analyzer);
-                
         }
 
 
@@ -138,9 +137,12 @@ class LuceneInteractive
         //-------------------------------------------------------------------------------------------------
         //string pathdicectory = @"C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Sample.json";
         // Input Json to string and then using list to store
+        //string testCollectionPath = @"H:\IFN647\SearchRetriever\Dataset\samples.json";
+        Console.WriteLine(CollectionPath);
+
         System.IO.TextReader reader = new System.IO.StreamReader(CollectionPath);
         string text = reader.ReadToEnd();
-        //reader.Close();
+        reader.Close();
         List<IndividualCollection> hsuan = JsonConvert.DeserializeObject<List<IndividualCollection>>(text);
 
         //--------------------------------------------------------------------------------------------------
@@ -172,14 +174,8 @@ class LuceneInteractive
             }
            
         }
-        //Console.WriteLine(hsuanJson);
-        //for (int i =0; i<returnList.Count();i++) {
-        //    Console.WriteLine(returnList[i]);
-        //}
-
         //-----------------------------------------------------------------------------------------------
         return returnList;
-
     }
 
 
@@ -237,7 +233,7 @@ class LuceneInteractive
         //List<IndividualCollection> collectionList = collectString(path);
         List<string> l = collectString(indexPath);
         for (int i =0; i<l.Count();i++) {
-            Console.WriteLine(l[i]);
+            //Console.WriteLine(l[i]);
         }
         // source collection
         //List<string> l = new List<string>();

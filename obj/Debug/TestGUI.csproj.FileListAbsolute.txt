@@ -101,3 +101,4 @@ H:\IFN647\SearchRetriever\obj\Debug\WindowsFormsApplication1.Properties.Resource
 H:\IFN647\SearchRetriever\obj\Debug\TestGUI.csproj.GenerateResource.Cache
 H:\IFN647\SearchRetriever\obj\Debug\WindowsFormsApplication1.exe
 H:\IFN647\SearchRetriever\obj\Debug\WindowsFormsApplication1.pdb
+H:\IFN647\SearchRetriever\obj\Debug\TestGUI.csproj.CoreCompileInputs.cache

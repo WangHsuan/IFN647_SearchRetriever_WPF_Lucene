@@ -94,9 +94,9 @@ namespace WindowsFormsApplication1
         {
             list.Items.Clear();
             string query = textBoxEnter.Text;
-            string path = BrowseLabel.Text;
+            string indexPath = IndexPathlb.Text;
 
-            index.CreateSearcher(path);
+            index.CreateSearcher(indexPath);
             
             for (int i = 0; i < index.SearchAndDisplayResults(query).Count(); i++)
             {
@@ -129,7 +129,7 @@ namespace WindowsFormsApplication1
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            string defaultIndexPath = @"C:\Temp";
+            string defaultIndexPath = @"../Dataset";
             using (var dlg = new System.Windows.Forms.FolderBrowserDialog())
             {
                 System.Windows.Forms.DialogResult result = dlg.ShowDialog();
@@ -142,6 +142,7 @@ namespace WindowsFormsApplication1
                 //string path = BrowseLabel.Text;
                 // var resultList = index.activateIndex(query, path);
             }
+            IndexPathlb.Text = defaultIndexPath;
         }
 
         private void StopWatch_Click(object sender, EventArgs e)

@@ -43,34 +43,32 @@
             this.list = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.StopWatch = new System.Windows.Forms.Label();
+            this.IndexPathlb = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // NextLabel
             // 
             this.NextLabel.AutoSize = true;
-            this.NextLabel.Location = new System.Drawing.Point(66, 46);
-            this.NextLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.NextLabel.Location = new System.Drawing.Point(44, 30);
             this.NextLabel.Name = "NextLabel";
-            this.NextLabel.Size = new System.Drawing.Size(0, 20);
+            this.NextLabel.Size = new System.Drawing.Size(0, 13);
             this.NextLabel.TabIndex = 4;
             this.NextLabel.Click += new System.EventHandler(this.NextLabel_Click);
             // 
             // ClickLabel1
             // 
             this.ClickLabel1.AutoSize = true;
-            this.ClickLabel1.Location = new System.Drawing.Point(66, 283);
-            this.ClickLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ClickLabel1.Location = new System.Drawing.Point(44, 184);
             this.ClickLabel1.Name = "ClickLabel1";
-            this.ClickLabel1.Size = new System.Drawing.Size(0, 20);
+            this.ClickLabel1.Size = new System.Drawing.Size(0, 13);
             this.ClickLabel1.TabIndex = 7;
             this.ClickLabel1.Click += new System.EventHandler(this.ClickLabel_Click);
             // 
             // BrowseButton
             // 
-            this.BrowseButton.Location = new System.Drawing.Point(659, 58);
-            this.BrowseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BrowseButton.Location = new System.Drawing.Point(439, 38);
             this.BrowseButton.Name = "BrowseButton";
-            this.BrowseButton.Size = new System.Drawing.Size(119, 30);
+            this.BrowseButton.Size = new System.Drawing.Size(79, 19);
             this.BrowseButton.TabIndex = 8;
             this.BrowseButton.Text = "Browse";
             this.BrowseButton.UseVisualStyleBackColor = true;
@@ -78,10 +76,9 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(659, 138);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SaveButton.Location = new System.Drawing.Point(439, 90);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(119, 30);
+            this.SaveButton.Size = new System.Drawing.Size(79, 19);
             this.SaveButton.TabIndex = 9;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -90,20 +87,18 @@
             // BrowseLabel
             // 
             this.BrowseLabel.AutoSize = true;
-            this.BrowseLabel.Location = new System.Drawing.Point(655, 93);
-            this.BrowseLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BrowseLabel.Location = new System.Drawing.Point(437, 60);
             this.BrowseLabel.Name = "BrowseLabel";
-            this.BrowseLabel.Size = new System.Drawing.Size(129, 20);
+            this.BrowseLabel.Size = new System.Drawing.Size(87, 13);
             this.BrowseLabel.TabIndex = 10;
             this.BrowseLabel.Text = "Browse Directory";
             // 
             // SaveLabel
             // 
             this.SaveLabel.AutoSize = true;
-            this.SaveLabel.Location = new System.Drawing.Point(665, 173);
-            this.SaveLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SaveLabel.Location = new System.Drawing.Point(443, 112);
             this.SaveLabel.Name = "SaveLabel";
-            this.SaveLabel.Size = new System.Drawing.Size(112, 20);
+            this.SaveLabel.Size = new System.Drawing.Size(77, 13);
             this.SaveLabel.TabIndex = 11;
             this.SaveLabel.Text = "Save Directory";
             // 
@@ -113,9 +108,10 @@
             // 
             // SearchAndDisplay
             // 
-            this.SearchAndDisplay.Location = new System.Drawing.Point(370, 58);
+            this.SearchAndDisplay.Location = new System.Drawing.Point(247, 38);
+            this.SearchAndDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SearchAndDisplay.Name = "SearchAndDisplay";
-            this.SearchAndDisplay.Size = new System.Drawing.Size(119, 30);
+            this.SearchAndDisplay.Size = new System.Drawing.Size(79, 19);
             this.SearchAndDisplay.TabIndex = 15;
             this.SearchAndDisplay.Text = "Search";
             this.SearchAndDisplay.UseVisualStyleBackColor = true;
@@ -123,17 +119,19 @@
             // 
             // textBoxEnter
             // 
-            this.textBoxEnter.Location = new System.Drawing.Point(12, 58);
+            this.textBoxEnter.Location = new System.Drawing.Point(8, 38);
+            this.textBoxEnter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxEnter.Name = "textBoxEnter";
-            this.textBoxEnter.Size = new System.Drawing.Size(338, 26);
+            this.textBoxEnter.Size = new System.Drawing.Size(227, 20);
             this.textBoxEnter.TabIndex = 16;
             this.textBoxEnter.TextChanged += new System.EventHandler(this.TextBox1_TextChanged_1);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(516, 58);
+            this.button1.Location = new System.Drawing.Point(344, 38);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 30);
+            this.button1.Size = new System.Drawing.Size(79, 19);
             this.button1.TabIndex = 20;
             this.button1.Text = "Index";
             this.button1.UseVisualStyleBackColor = true;
@@ -142,37 +140,49 @@
             // list
             // 
             this.list.FormattingEnabled = true;
-            this.list.ItemHeight = 20;
-            this.list.Location = new System.Drawing.Point(12, 230);
+            this.list.Location = new System.Drawing.Point(8, 149);
+            this.list.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.list.Name = "list";
-            this.list.Size = new System.Drawing.Size(1176, 344);
+            this.list.Size = new System.Drawing.Size(785, 225);
             this.list.TabIndex = 22;
             this.list.SelectedIndexChanged += new System.EventHandler(this.List_SelectedIndexChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 602);
+            this.comboBox1.Location = new System.Drawing.Point(8, 391);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.Size = new System.Drawing.Size(82, 21);
             this.comboBox1.TabIndex = 23;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // StopWatch
             // 
             this.StopWatch.AutoSize = true;
-            this.StopWatch.Location = new System.Drawing.Point(12, 207);
+            this.StopWatch.Location = new System.Drawing.Point(8, 135);
+            this.StopWatch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StopWatch.Name = "StopWatch";
-            this.StopWatch.Size = new System.Drawing.Size(43, 20);
+            this.StopWatch.Size = new System.Drawing.Size(30, 13);
             this.StopWatch.TabIndex = 24;
             this.StopWatch.Text = "Time";
             this.StopWatch.Click += new System.EventHandler(this.StopWatch_Click);
             // 
+            // IndexPathlb
+            // 
+            this.IndexPathlb.AutoSize = true;
+            this.IndexPathlb.Location = new System.Drawing.Point(356, 60);
+            this.IndexPathlb.Name = "IndexPathlb";
+            this.IndexPathlb.Size = new System.Drawing.Size(55, 13);
+            this.IndexPathlb.TabIndex = 25;
+            this.IndexPathlb.Text = "IndexPath";
+            // 
             // GUIForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 668);
+            this.ClientSize = new System.Drawing.Size(801, 434);
+            this.Controls.Add(this.IndexPathlb);
             this.Controls.Add(this.StopWatch);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.list);
@@ -185,7 +195,6 @@
             this.Controls.Add(this.BrowseButton);
             this.Controls.Add(this.ClickLabel1);
             this.Controls.Add(this.NextLabel);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GUIForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -212,6 +221,7 @@
         private System.Windows.Forms.ListBox list;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label StopWatch;
+        private System.Windows.Forms.Label IndexPathlb;
     }
 }
 
