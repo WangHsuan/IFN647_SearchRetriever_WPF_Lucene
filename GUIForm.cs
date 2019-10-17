@@ -58,8 +58,8 @@ namespace WindowsFormsApplication1
             
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.ShowDialog();
+            index.CollectionPath = openFileDialog1.FileName;
             BrowseLabel.Text = openFileDialog1.FileName;
-
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -129,11 +129,19 @@ namespace WindowsFormsApplication1
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-           
-            string path = BrowseLabel.Text;
-            // var resultList = index.activateIndex(query, path);
-            index.activateIndex(path);
-            StopWatch.Text = index.IndexingTime;
+            string defaultIndexPath = @"C:\Temp";
+            using (var dlg = new System.Windows.Forms.FolderBrowserDialog())
+            {
+                System.Windows.Forms.DialogResult result = dlg.ShowDialog();
+                if (result == System.Windows.Forms.DialogResult.OK)
+                {
+                    defaultIndexPath = dlg.SelectedPath;
+                    index.activateIndex(defaultIndexPath);
+                    StopWatch.Text = index.IndexingTime;
+                }
+                //string path = BrowseLabel.Text;
+                // var resultList = index.activateIndex(query, path);
+            }
         }
 
         private void StopWatch_Click(object sender, EventArgs e)

@@ -31,15 +31,16 @@ class LuceneInteractive
         const string AUTHOR_FN = "Author";
         const string TEXT_FN = "Text";
         public string IndexingTime { get; set; }
-        public string IndexPath { get; set; }
+        public string CollectionPath { get; set; }
+
         public LuceneInteractive()
-            {
-                luceneIndexDirectory = null;
-                writer = null;
-                analyzer = new Lucene.Net.Analysis.SimpleAnalyzer();
-                parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, TEXT_FN, analyzer);
+        {
+            luceneIndexDirectory = null;
+            writer = null;
+            analyzer = new Lucene.Net.Analysis.SimpleAnalyzer();
+            parser = new QueryParser(Lucene.Net.Util.Version.LUCENE_30, TEXT_FN, analyzer);
                 
-            }
+        }
 
 
     /// <summary>
@@ -91,7 +92,7 @@ class LuceneInteractive
         /// </summary>
         public void CreateSearcher(string indexPath)
         {
-        luceneIndexDirectory = Lucene.Net.Store.FSDirectory.Open(IndexPath);
+        luceneIndexDirectory = Lucene.Net.Store.FSDirectory.Open(indexPath);
         searcher = new IndexSearcher(luceneIndexDirectory);
         }
 
@@ -99,27 +100,28 @@ class LuceneInteractive
 
         public List<string> SearchAndDisplayResults(string querytext)
         {
-            querytext = querytext.ToLower();
-            Query query = parser.Parse(querytext);
-            TopDocs results = searcher.Search(query, 100);
-
-            int rank = 0;
             List<string> rankResult = new List<string>();
-            foreach (ScoreDoc scoreDoc in results.ScoreDocs)
+            if (querytext != "")
             {
-                rank++;
-                Lucene.Net.Documents.Document doc = searcher.Doc(scoreDoc.Doc);
-            string myFieldValue = doc.Get(TEXT_FN).ToString();
-            rankResult.Add("Rank " + rank + " title " + myFieldValue);
+                Query query = parser.Parse(querytext.ToLower());
+                TopDocs results = searcher.Search(query, 100);
 
-            //string titleValue = doc.Get(TITLE_FN).ToString();
-            //string authorValue = doc.Get(AUTHOR_FN).ToString();
-            //Console.WriteLine("Rank " + rank + " title " + titleValue + " author " + authorValue);
-            //rankResult.Add("Rank " + rank + " title " + titleValue + " author " + authorValue);
-        }
-       
-        return rankResult;
+                int rank = 0;
+                
+                foreach (ScoreDoc scoreDoc in results.ScoreDocs)
+                {
+                    rank++;
+                    Lucene.Net.Documents.Document doc = searcher.Doc(scoreDoc.Doc);
+                    string myFieldValue = doc.Get(TEXT_FN).ToString();
+                    rankResult.Add("Rank " + rank + " title " + myFieldValue);
 
+                    //string titleValue = doc.Get(TITLE_FN).ToString();
+                    //string authorValue = doc.Get(AUTHOR_FN).ToString();
+                    //Console.WriteLine("Rank " + rank + " title " + titleValue + " author " + authorValue);
+                    //rankResult.Add("Rank " + rank + " title " + titleValue + " author " + authorValue);
+                }
+            }
+            return rankResult;
     }
         
 
@@ -131,15 +133,14 @@ class LuceneInteractive
                 searcher.Dispose();
             }
 
-        public List<string> collectString(string path)
+        public List<string> collectString(string indexPath)
         {
         //-------------------------------------------------------------------------------------------------
         //string pathdicectory = @"C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Sample.json";
-        string pathdicectory = path;
         // Input Json to string and then using list to store
-        System.IO.TextReader reader = new System.IO.StreamReader(pathdicectory);
+        System.IO.TextReader reader = new System.IO.StreamReader(CollectionPath);
         string text = reader.ReadToEnd();
-        reader.Close();
+        //reader.Close();
         List<IndividualCollection> hsuan = JsonConvert.DeserializeObject<List<IndividualCollection>>(text);
 
         //--------------------------------------------------------------------------------------------------
@@ -149,7 +150,7 @@ class LuceneInteractive
         string deArray = "";
         List<string> returnList = new List<string>();
         List<IndividualCollection> hsuanJsonList = new List<IndividualCollection>();
-        using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
+        using (FileStream fs = new FileStream(CollectionPath, FileMode.Open, FileAccess.Read))
         using (StreamReader sr = new StreamReader(fs))
         using (JsonTextReader Jsonreader = new JsonTextReader(sr))
         {
@@ -228,12 +229,13 @@ class LuceneInteractive
         return expandedQuery;
     }
     //-----------------------------------------------------------------------------
-    public void activateIndex(string path)
+    public void activateIndex(string indexPath)
         {
+        
         LuceneInteractive myLuceneApp = new LuceneInteractive();
 
         //List<IndividualCollection> collectionList = collectString(path);
-        List<string> l = collectString(path);
+        List<string> l = collectString(indexPath);
         for (int i =0; i<l.Count();i++) {
             Console.WriteLine(l[i]);
         }
@@ -246,10 +248,10 @@ class LuceneInteractive
         //}
         System.Console.WriteLine(l.Count());
         // Index code
-        IndexPath = @"C:\Users\wangh\OneDrive\桌面\IFN647_Assignment2\Week8\HsuanIndex";
+        
            // LuceneInteractive myLuceneApp = new LuceneInteractive();
             DateTime Indexingstart = System.DateTime.Now;
-            myLuceneApp.CreateIndex(IndexPath);            
+            myLuceneApp.CreateIndex(indexPath);            
             foreach (string s in l)
             {
                 myLuceneApp.IndexText(s);
